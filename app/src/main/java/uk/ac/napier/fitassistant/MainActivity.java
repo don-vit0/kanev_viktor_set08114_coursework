@@ -6,8 +6,20 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private CalcFragment calcFragment;
     private ShopFragment shopFragment;
     private ProgressFragment progressFragment;
+    private BmiFragment bmiFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
         calcFragment = new CalcFragment();
         shopFragment = new ShopFragment();
         progressFragment = new ProgressFragment();
+        bmiFragment = new BmiFragment();
         setFragment(homeFragment);
+
+
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

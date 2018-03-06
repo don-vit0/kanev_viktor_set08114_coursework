@@ -8,4 +8,5 @@
     <color name="colorProg">#3FB568</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorWhiteTransparent">#80ffffff</color>
+    <color name="colorBlack">#000000</color>
 </resources>

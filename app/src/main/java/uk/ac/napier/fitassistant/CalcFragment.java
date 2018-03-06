@@ -3,16 +3,19 @@ package uk.ac.napier.fitassistant;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class CalcFragment extends Fragment {
-
 
     public CalcFragment() {
         // Required empty public constructor
@@ -22,8 +25,44 @@ public class CalcFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calc, container, false);
-    }
+        final View v =  inflater.inflate(R.layout.fragment_calc, container, false);
+        Button bmi_button = (Button)v.findViewById(R.id.bmi_button);
+        Button calorie_button = (Button) v.findViewById(R.id.calorie_button);
+        Button weightC_button = (Button) v.findViewById(R.id.conv_button);
 
+         bmi_button.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Fragment bmiFragment = new BmiFragment();
+                  FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                  transaction.replace(R.id.main_frame, bmiFragment).addToBackStack(null);
+                  transaction.commit();
+              }
+           });
+
+         calorie_button.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Fragment calorieFragment = new CalorieFragment();
+                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                 transaction.replace(R.id.main_frame, calorieFragment).addToBackStack(null);
+                 transaction.commit();
+             }
+         });
+
+         weightC_button.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Fragment weightConvertFragment = new WeightConvFragment();
+                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                 transaction.replace(R.id.main_frame, weightConvertFragment).addToBackStack(null);
+                 transaction.commit();
+             }
+         });
+
+
+
+
+        return v;
+    }
 }
