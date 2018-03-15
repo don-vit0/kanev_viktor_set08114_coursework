@@ -83,13 +83,14 @@
         android:id="@+id/textView2" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerCalorie"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/editAge"
         android:layout_alignStart="@+id/editAge"
-        android:visibility="visible"/>
+        android:prompt="@string/spinnerPrompt"
+        />
 
     <TextView
         android:id="@+id/gender"
@@ -102,35 +103,37 @@
         android:text="@string/gender"
         android:textSize="20sp" />
 
-    <RadioButton
-        android:id="@+id/radioMale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/gender"
-        android:layout_alignLeft="@+id/spinner"
-        android:layout_alignStart="@+id/spinner"
-        android:text="Male" />
-
-    <RadioButton
-        android:id="@+id/radioFemale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/radioMale"
-        android:layout_alignBottom="@+id/radioMale"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
-        android:layout_toEndOf="@+id/radioMale"
-        android:layout_toRightOf="@+id/radioMale"
-        android:text="Female" />
+    <RadioGroup
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="184dp"
+        android:id="@+id/radioGroup2">
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="230dp"
+                android:text="@string/maleRadio"
+                android:layout_marginLeft="230dp" />
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-31dp"
+                android:layout_marginLeft="140dp"
+                android:layout_marginStart="140dp"
+                android:text="@string/femaleRadio" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/resultTDEE"
-        android:layout_width="wrap_content"
+        android:layout_width="282dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/gender"
         android:layout_alignStart="@+id/gender"
-        android:layout_below="@+id/gender"
-        android:layout_marginTop="64dp"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_marginTop="81dp"
         android:text="@string/resultCal" />
 
     <TextView
@@ -149,21 +152,20 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/resultTDEE"
         android:layout_alignStart="@+id/resultTDEE"
-        android:layout_below="@+id/resultTDEE"
-        android:layout_marginTop="37dp"
+        android:layout_below="@+id/tdeeResult"
+        android:layout_marginTop="23dp"
         android:text="@string/gainWeight"
-        android:textSize="15sp"/>
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/textMaintain"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textGain"
         android:layout_alignStart="@+id/textGain"
         android:layout_below="@+id/textGain"
-        android:layout_marginTop="21dp"
         android:text="@string/maintainWeight"
-        android:textSize="15sp"/>
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/textLose"
@@ -172,9 +174,69 @@
         android:layout_alignLeft="@+id/textMaintain"
         android:layout_alignStart="@+id/textMaintain"
         android:layout_below="@+id/textMaintain"
-        android:layout_marginTop="19dp"
         android:text="@string/loseWeight"
-        android:textSize="15sp"/>
+        android:textSize="15sp" />
 
+    <Button
+        android:id="@+id/tdee_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/resultBMR"
+        android:layout_alignRight="@+id/resultBMR"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:text="@string/calculateBtn"/>
+
+    <TextView
+        android:id="@+id/bmrResult"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/resultBMR"
+        android:layout_alignBottom="@+id/resultBMR"
+        android:layout_toEndOf="@+id/editAge"
+        android:layout_toRightOf="@+id/editAge"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tdeeResult"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/resultTDEE"
+        android:layout_toEndOf="@+id/resultTDEE"
+        android:layout_toRightOf="@+id/resultTDEE"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/gainResult"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textGain"
+        android:layout_alignBottom="@+id/textGain"
+        android:layout_toEndOf="@+id/resultTDEE"
+        android:layout_toRightOf="@+id/resultTDEE"
+        android:textColor="@color/colorGain"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/maintainResult"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textMaintain"
+        android:layout_alignBottom="@+id/textMaintain"
+        android:layout_alignLeft="@+id/gainResult"
+        android:layout_alignStart="@+id/gainResult"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/loseResult"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textLose"
+        android:layout_alignBottom="@+id/textLose"
+        android:layout_alignLeft="@+id/maintainResult"
+        android:layout_alignStart="@+id/maintainResult"
+        android:textColor="@color/colorLose"
+        android:textSize="12sp" />
 
 </RelativeLayout>

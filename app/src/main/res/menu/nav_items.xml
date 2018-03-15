@@ -14,8 +14,8 @@
         android:id="@+id/nav_shop"
         android:icon="@drawable/ic_shopping_basket_black_24dp"
         android:title="@string/nav_shop" />
-    <item
+   <!-- <item
         android:id="@+id/nav_prog"
         android:icon="@drawable/ic_show_chart_black_24dp"
-        android:title="@string/nav_progress" />
+        android:title="@string/nav_progress" />-->
 </menu>

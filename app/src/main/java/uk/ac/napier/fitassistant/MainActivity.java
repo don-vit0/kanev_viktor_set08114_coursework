@@ -42,35 +42,36 @@ public class MainActivity extends AppCompatActivity {
         homeFragment = new HomeFragment();
         calcFragment = new CalcFragment();
         shopFragment = new ShopFragment();
-        progressFragment = new ProgressFragment();
+       // progressFragment = new ProgressFragment();
         bmiFragment = new BmiFragment();
         setFragment(homeFragment);
 
 
 
+        //switches between fragments via the bottom navigation
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId())
                 {
                     case R.id.nav_home:
-                        mMainNav.setItemBackgroundResource(R.color.colorPrimary);
+                        mMainNav.setItemBackgroundResource(R.color.colorNav);
                         setFragment(homeFragment);
                         return true;
 
                     case  R.id.nav_calc:
-                        mMainNav.setItemBackgroundResource(R.color.colorCalc);
+                        mMainNav.setItemBackgroundResource(R.color.colorNav);
                         setFragment(calcFragment);
                         return true;
 
-                    case R.id.nav_prog:
+                   /* case R.id.nav_prog:
                         mMainNav.setItemBackgroundResource(R.color.colorProg);
                         setFragment(progressFragment);
-                        return true;
+                        return true;*/
 
                     case R.id.nav_shop:
-                        mMainNav.setItemBackgroundResource(R.color.colorShop);
-                        setFragment(homeFragment);
+                        mMainNav.setItemBackgroundResource(R.color.colorNav);
+                        setFragment(shopFragment);
                         return true;
 
                     default:
@@ -82,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+    //method to set the fragment
     private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_frame, fragment);

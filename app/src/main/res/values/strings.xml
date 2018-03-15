@@ -7,15 +7,28 @@
     <string name="weight">Weight(kg)</string>
     <string name="height">Height(cm)</string>
     <string name="calculate">Calculate BMI</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="age">Age</string>
     <string name="activity">Activity</string>
     <string name="gender">Gender</string>
-    <string name="resultCal">Your TDEE(total daily energy expenditure) is:</string>
-    <string name="resultBMR">Your BMR(basal metabolic rate) is:</string>
+    <string name="resultCal">Your TDEE(total daily energy expenditure) is: </string>
+    <string name="resultBMR">Your BMR(basal metabolic rate) is: </string>
     <string name="gainWeight">To gain weight you\'ll need to consume:</string>
     <string name="maintainWeight">To maintain weight you\'ll need to consume:</string>
     <string name="loseWeight">To lose weight you\'ll need to consume:</string>
+    <string name="spinnerPrompt">Choose activity level</string>
+    <string name="maleRadio">Male</string>
+    <string name="femaleRadio">Female</string>
+    <string name="calculateBtn">Calculate</string>
+    <string name="bmi_calculator_btn">BMI calculator</string>
+    <string name="calorie_calculator_btn">Calorie calculator</string>
+    <string name="macro_calc_btn">Macro calculator</string>
+    <string name="fatString">Fat</string>
+    <string name="carbString">Carbs</string>
+    <string name="proteinString">Protein</string>
+    <string name="enter_calories_string">kcal</string>
+    <string name="gramsString">g</string>
+    <string name="perc">%</string>
+    <string name="kcal_string">kcal</string>
+    <string name="action_add">Add</string>
 </resources>

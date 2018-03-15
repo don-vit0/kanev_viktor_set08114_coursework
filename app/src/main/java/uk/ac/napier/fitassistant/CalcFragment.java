@@ -3,13 +3,11 @@ package uk.ac.napier.fitassistant;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
 
 /**
@@ -30,6 +28,8 @@ public class CalcFragment extends Fragment {
         Button calorie_button = (Button) v.findViewById(R.id.calorie_button);
         Button weightC_button = (Button) v.findViewById(R.id.conv_button);
 
+
+        //Onclick listeners for the buttons to switch fragments
          bmi_button.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
@@ -53,7 +53,7 @@ public class CalcFragment extends Fragment {
          weightC_button.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Fragment weightConvertFragment = new WeightConvFragment();
+                 Fragment weightConvertFragment = new MacroFragment();
                  FragmentTransaction transaction = getFragmentManager().beginTransaction();
                  transaction.replace(R.id.main_frame, weightConvertFragment).addToBackStack(null);
                  transaction.commit();

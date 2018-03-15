@@ -1,0 +1,188 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="uk.ac.napier.fitassistant.MacroFragment"
+    android:background="@color/colorMacro"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/proteinPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/seekProtein"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/carbPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/seekCarb"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/fatPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/seekFat"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/resultProtein"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/resultTextPro"
+        android:layout_alignBottom="@+id/resultTextPro"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp"
+        android:layout_toEndOf="@+id/resultTextPro"
+        android:layout_toRightOf="@+id/resultTextPro"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/resultCarb"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/resultTextCarb"
+        android:layout_alignBottom="@+id/resultTextCarb"
+        android:layout_alignLeft="@+id/resultProtein"
+        android:layout_alignStart="@+id/resultProtein"
+        android:textSize="25sp"
+        android:textColor="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/resultFat"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/resultTextFat"
+        android:layout_alignBottom="@+id/resultTextFat"
+        android:layout_alignLeft="@+id/resultCarb"
+        android:layout_alignStart="@+id/resultCarb"
+        android:textSize="25sp"
+        android:textColor="@color/colorAccent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textProtein"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textProtein"
+        android:layout_marginTop="13dp"
+        android:text="@string/proteinString"
+        android:textSize="25sp"
+        android:id="@+id/resultTextPro" />
+
+    <TextView
+        android:id="@+id/resultTextCarb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/resultTextFat"
+        android:layout_alignStart="@+id/resultTextFat"
+        android:layout_below="@+id/resultTextPro"
+        android:layout_marginTop="31dp"
+        android:text="@string/carbString"
+        android:textSize="25sp"
+        />
+
+    <TextView
+        android:id="@+id/resultTextFat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/resultTextPro"
+        android:layout_alignStart="@+id/resultTextPro"
+        android:layout_below="@+id/resultTextCarb"
+        android:layout_marginTop="29dp"
+        android:text="@string/fatString"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/macro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <SeekBar
+        android:id="@+id/seekProtein"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/seekCarb"
+        android:layout_alignLeft="@+id/seekCarb"
+        android:layout_alignStart="@+id/seekCarb"
+        android:layout_marginBottom="37dp" />
+
+    <SeekBar
+        android:id="@+id/seekCarb"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/seekFat"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp" />
+
+    <SeekBar
+        android:id="@+id/seekFat"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/seekCarb"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/seekCarb"
+        android:layout_marginBottom="14dp" />
+
+    <TextView
+    android:id="@+id/textFat"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/seekFat"
+    android:layout_alignLeft="@+id/seekFat"
+    android:layout_alignStart="@+id/seekFat"
+    android:layout_marginLeft="14dp"
+    android:layout_marginStart="14dp"
+    android:text="@string/fatString"
+    android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textCarb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekCarb"
+        android:layout_alignLeft="@+id/textProtein"
+        android:layout_alignStart="@+id/textProtein"
+        android:text="@string/carbString"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textProtein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekProtein"
+        android:layout_alignLeft="@+id/textFat"
+        android:layout_alignStart="@+id/textFat"
+        android:text="@string/proteinString"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editCalories"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/resultFat"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="@string/enter_calories_string"
+        android:inputType="number|numberDecimal"
+        android:textSize="30sp"
+        android:imeOptions="actionDone"/>
+
+</RelativeLayout>

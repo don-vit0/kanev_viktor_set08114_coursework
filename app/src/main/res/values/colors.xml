@@ -9,4 +9,10 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorWhiteTransparent">#80ffffff</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorGain">#FF0000</color>
+    <color name="colorLose">#00ff00</color>
+    <color name="colorMacro">#565656</color>
+    <color name="colorNav">#414141</color>
+    <color name="colorIcon">#e04a4a</color>
+    <color name="colorNavDark">#2b2b2b</color>
 </resources>
